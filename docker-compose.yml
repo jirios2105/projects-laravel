@@ -1,0 +1,28 @@
+version: '2'
+services:
+    web:
+        container_name: web2
+        build:
+            context: ./
+            dockerfile: .Docker/web.docker
+        volumes:
+            - ./:/var/www/html/projects-laravel
+            - ./storage/app:/var/www/html/storage/app
+            - ./storage/logs:/var/www/html/storage/logs
+        ports:
+            - "80:80"
+        environment:
+            - "DB_PORT=3306"
+            - "DB_HOST=database"
+        links:
+            - database   
+    database:
+        container_name: mysql2
+        image: mysql:5.7
+        env_file:
+            - ./mysql.env
+        volumes:
+            - ./storage/mysql:/var/lib/mysql
+        ports:
+            - "33061:3306"
+    
