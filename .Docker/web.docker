@@ -1,4 +1,4 @@
-FROM laravel-docker:1.0
+FROM 3515210023/l-d:v0.1
 MAINTAINER ivanRios joserios9605@outlook.com
 
 COPY . /var/www/html/projects-laravel
