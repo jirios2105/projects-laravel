@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y libmcrypt-dev mysql-client \
     && docker-php-ext-install pdo pdo_mysql
 RUN chown -R www-data:www-data /var/www/html/projects-laravel \
     && a2enmod rewrite
-RUN cd . /var/www/html/projects-laravel/test && php artisan migreate
+RUN cd . /var/www/html/projects-laravel/test && php artisan migrate
 
 WORKDIR /var/www/html
 
