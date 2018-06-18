@@ -1,7 +1,7 @@
 version: '2'
 services:
     web:
-        container_name: web2
+        container_name: web-projects-laravel
         build:
             context: ./
             dockerfile: .Docker/web.docker
@@ -17,7 +17,7 @@ services:
         links:
             - database   
     database:
-        container_name: mysql2
+        container_name: mysql-projects-laravel
         image: mysql:5.7
         env_file:
             - ./mysql.env
