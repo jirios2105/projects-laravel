@@ -1,1 +1,11 @@
+<<<<<<< HEAD
+Que hay Chinos-
+Ahora e realizado mas cambios
+he agregado nuevas lineas a este texto
+hfdsjhas
+wfioajkjds
+sdjhjkfdsd
+
+=======
 Moro hice un cambio aqui para hacer mas pruebas
+>>>>>>> 5f2d7812d08ad06a5649890eadf89eea6f0d8ebd
