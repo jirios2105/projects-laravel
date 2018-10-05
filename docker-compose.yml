@@ -1,14 +1,14 @@
 version: '2'
 services:
     web:
-        container_name: web-projects-laravel
+        container_name: web-projects
         build:
             context: ./
             dockerfile: .Docker/web.docker
         volumes:
-            - ./:/var/www/html/projects-laravel
-            - ./storage/app:/var/www/html/storage/app
-            - ./storage/logs:/var/www/html/storage/logs
+            - ./:/var/www/html/Projects
+            - ./storage/app:/var/www/html/Projects/storage/app
+            - ./storage/logs:/var/www/html/Projects/storage/logs
         ports:
             - "80:80"
         environment:
@@ -17,7 +17,7 @@ services:
         links:
             - database   
     database:
-        container_name: mysql-projects-laravel
+        container_name: mysql-projects
         image: mysql:5.7
         env_file:
             - ./mysql.env
@@ -25,4 +25,3 @@ services:
             - ./storage/mysql:/var/lib/mysql
         ports:
             - "33061:3306"
-    
