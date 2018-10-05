@@ -1,13 +1,12 @@
 FROM 3515210023/l-d:v0.1
 MAINTAINER ivanRios joserios9605@outlook.com
 
-COPY . /var/www/html/projects-laravel
+COPY . /var/www/html/Projects
 COPY .Docker/vhost.conf /etc/apache2/sites-available/000-default.conf
 RUN apt-get update && apt-get install -y libmcrypt-dev mysql-client \
     && docker-php-ext-install pdo pdo_mysql
-RUN chown -R www-data:www-data /var/www/html/projects-laravel \
+RUN chown -R www-data:www-data /var/www/html/Projects \
     && a2enmod rewrite
 
 
-WORKDIR /var/www/html
-
+WORKDIR /var/www/html/Projects
